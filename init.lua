@@ -13,8 +13,6 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 
 -- obsidian
 vim.opt.conceallevel = 1
-vim.api.nvim_create_user_command('Ot', 'ObsidianToday', {})
-vim.api.nvim_create_user_command('Os', 'ObsidianQuickSwitch', {})
-vim.api.nvim_create_user_command('OT', 'ObsidianTemplate', {})
 vim.api.nvim_set_keymap('n', '<Leader>ot', ':ObsidianToday<CR>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<Leader>oo', ':ObsidianQuickSwitch<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>oT', ':ObsidianTemplate<CR>', { noremap = true, silent = true })
