@@ -18,32 +18,40 @@ return {
     -- see below for full list of optional dependencies 👇
   },
   opts = {
-	    templates = {
-      folder = "templates",
-  },
-  daily_notes = {
-	  folder = "diary/",
-	  template = "diary.md"
-  },
     workspaces = {
       {
         name = "personal",
         path = "~/wiki",
       },
+      {
+	name = "work",
+	path = "~/Documents/SailVault",
+      },
     },
-     disable_frontmatter = true,
-    -- see below for full list of options 👇
-  },
+    disable_frontmatter = true,
+    checkboxes = {
+      [" "] = { char = "☐", hl_group = "ObsidianTodo" },
+      ["x"] = { char = "✔", hl_group = "ObsidianDone" },
+    },
   mappings = {
     ["<cr>"] = {
       action = function()
         return require("obsidian").util.smart_action()
       end,
       opts = { buffer = true, expr = true },
-    }
-  },
-      checkboxes = {
-      [" "] = { char = "☐", hl_group = "ObsidianTodo" },
-      ["x"] = { char = "✔", hl_group = "ObsidianDone" },
     },
+  },
+  ---@param title string|?
+---@return string
+note_id_func = function(title)
+  if title ~= nil and title ~= "" then
+    -- If a title is given, return it as is (without modifications)
+    return title
+  else
+    -- If no title is given, generate a Zettelkasten-style timestamp (YYYYMMDDHHMMSS)
+    return "Zettelkasten/" .. os.date("%Y%m%d%H%M%S")
+    end
+end,
+
+  },
 }
