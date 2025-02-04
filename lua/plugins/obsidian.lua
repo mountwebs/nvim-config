@@ -41,6 +41,9 @@ return {
       opts = { buffer = true, expr = true },
     },
   },
+  templates = {
+    folder = "Templates"
+  },
   ---@param title string|?
 ---@return string
 note_id_func = function(title)
