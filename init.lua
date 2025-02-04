@@ -12,14 +12,12 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 
-vim.opt.completeopt:append("longest")
-
 -- Obsidian
 vim.opt.conceallevel = 1
 vim.api.nvim_set_keymap('n', '<Leader>ot', ':ObsidianToday<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>oo', ':ObsidianQuickSwitch<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>oT', ':ObsidianTemplate<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>oz', ':ObsidianNew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>ote', ':ObsidianTemplate<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>on', ':ObsidianNew<CR>', { noremap = true, silent = true })
 
 vim.cmd("command! Ot ObsidianToday")
 vim.cmd("command! Oo ObsidianQuickSwitch")
